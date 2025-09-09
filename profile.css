@@ -1,0 +1,499 @@
+
+/* Profile Page Styles */
+.profile-section {
+  margin-top: 40px;
+}
+
+.profile-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 30px;
+  position: relative;
+}
+
+.profile-avatar-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.avatar-overlay i {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.profile-avatar:hover .avatar-overlay {
+  opacity: 1;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name-status {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.profile-name-status h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+}
+
+.status-indicator {
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.status-indicator.online {
+  background-color: rgba(72, 199, 142, 0.2);
+  color: #48c78e;
+}
+
+.status-indicator.offline {
+  background-color: rgba(241, 70, 104, 0.2);
+  color: #f14668;
+}
+
+.profile-registration {
+  font-size: 1rem;
+  color: var(--gray-text);
+  margin-bottom: 20px;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 30px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-item i {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 5px;
+}
+
+.stat-item span:first-of-type {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--light-text);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--gray-text);
+}
+
+.profile-actions {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s;
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.secondary-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--light-text);
+}
+
+.secondary-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Profile Tabs */
+.profile-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.profile-tabs .tab-button {
+  padding: 12px 25px;
+  background-color: var(--card-bg);
+  border: none;
+  border-radius: 8px;
+  color: var(--gray-text);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.profile-tabs .tab-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--light-text);
+}
+
+.profile-tabs .tab-button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Profile Content */
+.profile-content {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 50px;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: var(--secondary-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+
+/* About Section */
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--gray-text);
+  margin-bottom: 15px;
+}
+
+.about-edit textarea {
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  color: var(--light-text);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  resize: vertical;
+  margin-bottom: 15px;
+}
+
+.about-edit textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+}
+
+.edit-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+/* Watching Section */
+.watching-grid,
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.watching-card {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.watching-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.watching-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.watching-info {
+  padding: 15px;
+}
+
+.watching-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--light-text);
+}
+
+.watching-progress {
+  font-size: 0.9rem;
+  color: var(--gray-text);
+  margin-bottom: 15px;
+}
+
+.continue-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.continue-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.progress-bar {
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  margin-bottom: 8px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+/* Favorites Section */
+.favorites-grid .anime-card {
+  position: relative;
+}
+
+.remove-favorite {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.anime-card:hover .remove-favorite {
+  opacity: 1;
+}
+
+.remove-favorite:hover {
+  background-color: #f14668;
+}
+
+/* Achievements Section */
+.profile-achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Contacts Section */
+.contacts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.contact-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.contact-item i {
+  font-size: 1.8rem;
+  width: 40px;
+  text-align: center;
+}
+
+.contact-item a {
+  color: var(--light-text);
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.contact-item a:hover {
+  color: var(--secondary-color);
+}
+
+.contacts-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-edit-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-edit-item label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  color: var(--light-text);
+}
+
+.contact-edit-item label i {
+  font-size: 1.5rem;
+  width: 30px;
+  text-align: center;
+}
+
+.contact-edit-item input {
+  padding: 12px 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  color: var(--light-text);
+  font-size: 1rem;
+}
+
+.contact-edit-item input:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+}
+
+/* Modal Content Styles */
+#profile-edit-form .form-group {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 992px) {
+  .profile-avatar-container {
+    margin: 0 auto;
+  }
+  
+  .profile-info {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .profile-name-status {
+    justify-content: center;
+  }
+  
+  .profile-stats {
+    justify-content: center;
+  }
+  
+  .profile-actions {
+    position: static;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-tabs {
+    justify-content: flex-start;
+  }
+  
+  .watching-grid,
+  .favorites-grid,
+  .profile-achievements-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .watching-grid,
+  .favorites-grid,
+  .profile-achievements-grid {
+    grid-template-columns: 1fr;
+  }
+}

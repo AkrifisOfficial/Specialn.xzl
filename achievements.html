@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Достижения - AniCosmic</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="achievements.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">AniCosmic</a>
+      </div>
+      <nav>
+        <ul class="main-menu">
+          <li><a href="index.html">Недавнее</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Релизы</a>
+            <div class="dropdown-content">
+              <a href="releases.html?type=serial">Сериалы</a>
+              <a href="releases.html?type=film">Фильмы</a>
+              <a href="releases.html?type=ova">OVA</a>
+              <a href="releases.html?type=ona">ONA</a>
+            </div>
+          </li>
+          <li><a href="team.html">Наша команда</a></li>
+          <li><a href="achievements.html" class="active">Достижения</a></li>
+        </ul>
+      </nav>
+      <div class="search-profile">
+        <div class="search-box">
+          <input type="text" placeholder="Поиск...">
+          <button type="button" class="mic-btn"><i class="fas fa-microphone"></i></button>
+          <button type="button" class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="profile">
+          <i class="fas fa-user-circle"></i>
+          <div class="profile-dropdown">
+            <!-- Будет заполнено через script.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero">
+        <h1>Ваши достижения</h1>
+        <p>Открывайте достижения за просмотр аниме, знакомство с персонажами и выполнение квестов</p>
+      </section>
+      
+      <section class="achievements-section">
+        <div class="achievements-tabs">
+          <button class="tab-button active" data-category="all">Все</button>
+          <button class="tab-button" data-category="watching">Просмотр серий</button>
+          <button class="tab-button" data-category="characters">Персонажи</button>
+          <button class="tab-button" data-category="quests">Квесты</button>
+        </div>
+        
+        <div class="achievements-progress">
+          <div class="progress-container">
+            <div class="progress-text">
+              <span class="progress-label">Прогресс достижений</span>
+              <span class="progress-percent" id="achievements-percent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-bar-fill" id="achievements-progress-bar"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="achievements-grid" id="achievements-container">
+          <!-- Achievements will be loaded dynamically -->
+        </div>
+      </section>
+      
+      <section class="quests-section">
+        <h2>Активные квесты</h2>
+        <div class="quests-grid" id="active-quests">
+          <!-- Active quests will be loaded dynamically -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#" class="feedback-btn">Обратная связь</a>
+        </div>
+        <div class="copyright">
+          <p>Copyright © 2025 anicosmic.com Студия озвучки 'AniCosmic'</p>
+          <p>Руководитель: <a href="https://t.me/xMeT1oRx" target="_blank">@xMeT1oRx</a></p>
+        </div>
+        <div class="social-icons">
+          <a href="https://t.me/AniCosmic" target="_blank"><i class="fab fa-telegram"></i></a>
+          <a href="https://www.youtube.com/@AniCosmicShorts" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://boosty.to/xmet1orx" target="_blank"><i class="fas fa-heart"></i></a>
+          <a href="https://www.twitch.tv/xmet1orx" target="_blank"><i class="fab fa-twitch"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="achievement-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="achievement-detail" id="achievement-detail-container">
+        <!-- Achievement details will be loaded dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="achievements.js"></script>
+</body>
+</html>

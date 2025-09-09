@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AniCosmic - Студия озвучки аниме</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="twinkle-container"></div>
+   <div class="night">
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+    </div>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <i class="fas fa-star glowing-star"></i>
+        <a href="index.html">AniCosmic</a>
+      </div>
+      <nav>
+        <ul class="main-menu">
+          <li><a href="index.html">Недавнее</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Релизы</a>
+            <div class="dropdown-content">
+              <a href="releases.html?type=serial">Сериалы</a>
+              <a href="releases.html?type=film">Фильмы</a>
+              <a href="releases.html?type=ova">OVA</a>
+              <a href="releases.html?type=ona">ONA</a>
+            </div>
+          </li>
+          <li><a href="team.html">Наша команда</a></li>
+          <li><a href="achievements.html">Достижения</a></li>
+        </ul>
+      </nav>
+      <div class="search-profile">
+        <div class="search-box">
+          <input type="text" placeholder="Поиск...">
+          <button type="button" class="mic-btn">
+            <i class="fas fa-microphone"></i>
+            <div class="equalizer">
+              <span class="equalizer-bar"></span>
+              <span class="equalizer-bar"></span>
+              <span class="equalizer-bar"></span>
+              <span class="equalizer-bar"></span>
+            </div>
+          </button>
+          <button type="button" class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="profile">
+          <i class="fas fa-user-circle"></i>
+          <div class="profile-dropdown">
+            <!-- Будет заполнено через script.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+<section class="hero-section">
+  <div class="hero-bottom-fade"></div>
+  <div class="video-overlay"></div>
+  <video class="hero-video" id="hero-video" autoplay muted playsinline></video>
+    <source src="video/Devil.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content">
+    <h1 class="hero-title"></h1>
+    <div class="hero-buttons">
+      <button class="hero-play">▶ Доступно</button>
+      <button class="hero-more">Подробнее</button>
+    </div>
+    <button id="hero-audio" class="audio-btn" aria-label="Toggle sound">
+  <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+    <path class="speaker" d="M3 9v6h4l5 5V4l-5 5H3z" fill="white"/>
+    <path class="wave wave1" d="M14 10.5a1.5 1.5 0 010 3" stroke="white" stroke-width="2" fill="none"/>
+    <path class="wave wave2" d="M16.5 8a5 5 0 010 8" stroke="white" stroke-width="2" fill="none"/>
+  </svg>
+    </button>
+  </div>
+</section>
+
+  <main>
+    <div class="container">
+      <section class="recent-releases">
+        <h2>Недавние релизы</h2>
+        <div class="anime-grid" id="recent-anime">
+          <!-- Anime cards will be loaded dynamically -->
+        </div>
+      </section>
+      <section class="popular-anime">
+        <h2>Популярное аниме</h2>
+        <div class="anime-grid" id="popular-anime">
+          <!-- Anime cards will be loaded dynamically -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+  <div class="footer-container">
+    <div class="footer-left">
+      <div class="logo">
+        <i class="fas fa-star glowing-star"></i>
+        <span class="brand-name">AniCosmic</span>
+      </div>
+      <p class="footer-copy">on-anicosmic.com © 2025</p>
+      <a href="#" class="feedback-btn">Задать вопрос</a>
+    </div>
+
+    <div class="footer-center">
+      <a href="#">★ Premium</a>
+      <a href="#">Контакты</a>
+      <a href="#">Мобильная версия</a>
+      <a href="#">FAQ</a>
+      <a href="#">Очистить cookie</a>
+      <a href="#">Пользовательское соглашение</a>
+      <a href="#">Политика конфиденциальности</a>
+      <a href="#">Публичная оферта</a>
+      <a href="#">Правообладателям</a>
+      <a href="#">DMCA</a>
+    </div>
+
+    <div class="footer-right">
+      <div class="social-icons">
+        <a href="https://discord.com" target="_blank"><i class="fab fa-discord"></i></a>
+        <a href="https://t.me/AniCosmic" target="_blank"><i class="fab fa-telegram"></i></a>
+        <a href="https://vk.com" target="_blank"><i class="fab fa-vk"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <div id="feedback-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Обратная связь</h2>
+      <form id="feedback-form">
+        <div class="form-group">
+          <label for="name">Имя</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Сообщение</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Вход</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Пароль</label>
+          <input type="password" id="login-password" name="password" required>
+        </div>
+        <button type="submit">Войти</button>
+      </form>
+      <p>Нет аккаунта? <a href="#" id="show-register">Зарегистрироваться</a></p>
+    </div>
+  </div>
+
+  <div id="register-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Регистрация</h2>
+      <div id="terms">
+        <h3>Правила сайта:</h3>
+        <ol>
+          <li>Уважение к другим пользователям и администрации.</li>
+          <li>Запрет оскорблений и спама в комментариях.</li>
+          <li>Запрет на распространение вредоносного контента.</li>
+        </ol>
+        <div class="terms-buttons">
+          <button id="accept-terms">Принимаю</button>
+          <button id="decline-terms">Не принимаю</button>
+        </div>
+      </div>
+      <form id="register-form" style="display: none;">
+        <div class="form-group">
+          <label for="register-username">Имя пользователя</label>
+          <input type="text" id="register-username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="register-email">Email</label>
+          <input type="email" id="register-email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="register-password">Пароль</label>
+          <input type="password" id="register-password" name="password" required>
+        </div>
+        <div class="form-group">
+          <label for="register-confirm-password">Подтвердите пароль</label>
+          <input type="password" id="register-confirm-password" name="confirm-password" required>
+        </div>
+        <button type="submit">Зарегистрироваться</button>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

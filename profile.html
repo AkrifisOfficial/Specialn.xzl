@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Профиль - AniCosmic</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="profile.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">AniCosmic</a>
+      </div>
+      <nav>
+        <ul class="main-menu">
+          <li><a href="index.html">Недавнее</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Релизы</a>
+            <div class="dropdown-content">
+              <a href="releases.html?type=serial">Сериалы</a>
+              <a href="releases.html?type=film">Фильмы</a>
+              <a href="releases.html?type=ova">OVA</a>
+              <a href="releases.html?type=ona">ONA</a>
+            </div>
+          </li>
+          <li><a href="team.html">Наша команда</a></li>
+          <li><a href="achievements.html">Достижения</a></li>
+        </ul>
+      </nav>
+      <div class="search-profile">
+        <div class="search-box">
+          <input type="text" placeholder="Поиск...">
+          <button type="button" class="mic-btn"><i class="fas fa-microphone"></i></button>
+          <button type="button" class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="profile">
+          <i class="fas fa-user-circle"></i>
+          <div class="profile-dropdown">
+            <a href="profile.html">Мой профиль</a>
+            <a href="login.html">Выход</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="profile-section">
+        <div class="profile-header">
+          <div class="profile-avatar-container">
+            <div class="profile-avatar">
+              <img id="avatar-image" src="https://via.placeholder.com/200x200" alt="Аватар пользователя">
+              <div class="avatar-overlay">
+                <i class="fas fa-camera"></i>
+                <span>Изменить</span>
+              </div>
+            </div>
+            <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+          </div>
+          <div class="profile-info">
+            <div class="profile-name-status">
+              <h1 id="profile-username">Имя пользователя</h1>
+              <span class="status-indicator online">Онлайн</span>
+            </div>
+            <p class="profile-registration">Регистрация: <span id="registration-date">15 июня 2024</span></p>
+            <div class="profile-stats">
+              <div class="stat-item">
+                <i class="fas fa-eye"></i>
+                <span id="watched-count">42</span>
+                <span class="stat-label">Просмотрено</span>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-heart"></i>
+                <span id="favorites-count">16</span>
+                <span class="stat-label">В избранном</span>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-trophy"></i>
+                <span id="achievements-count">8</span>
+                <span class="stat-label">Достижений</span>
+              </div>
+            </div>
+          </div>
+          <div class="profile-actions">
+            <button id="edit-profile-btn" class="btn primary-btn">
+              <i class="fas fa-edit"></i> Редактировать профиль
+            </button>
+          </div>
+        </div>
+
+        <div class="profile-tabs">
+          <button class="tab-button active" data-tab="about">О себе</button>
+          <button class="tab-button" data-tab="watching">Смотрю сейчас</button>
+          <button class="tab-button" data-tab="favorites">Избранное</button>
+          <button class="tab-button" data-tab="achievements">Достижения</button>
+          <button class="tab-button" data-tab="contacts">Контакты</button>
+        </div>
+
+        <div class="profile-content">
+          <!-- О себе -->
+          <div class="tab-content active" id="about-tab">
+            <div class="about-section">
+              <h2>О себе</h2>
+              <div class="about-text" id="about-text">
+                <p>Привет! Я большой любитель аниме, особенно жанров фэнтези и приключения. Смотрю аниме уже более 5 лет и всегда в поиске новых интересных тайтлов.</p>
+                <p>Мои любимые аниме: "Атака титанов", "Клинок, рассекающий демонов", "Моя геройская академия".</p>
+              </div>
+              <div class="about-edit" id="about-edit" style="display: none;">
+                <textarea id="about-textarea" rows="6" placeholder="Расскажите о себе..."></textarea>
+                <div class="edit-buttons">
+                  <button id="save-about-btn" class="btn primary-btn">Сохранить</button>
+                  <button id="cancel-about-btn" class="btn secondary-btn">Отмена</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Смотрю сейчас -->
+          <div class="tab-content" id="watching-tab">
+            <h2>Смотрю сейчас</h2>
+            <div class="watching-grid" id="watching-anime">
+              <!-- Будет заполнено динамически -->
+            </div>
+          </div>
+
+          <!-- Избранное -->
+          <div class="tab-content" id="favorites-tab">
+            <h2>Избранное</h2>
+            <div class="favorites-grid" id="favorite-anime">
+              <!-- Будет заполнено динамически -->
+            </div>
+          </div>
+
+          <!-- Достижения -->
+          <div class="tab-content" id="achievements-tab">
+            <h2>Мои достижения</h2>
+            <div class="profile-achievements-grid" id="user-achievements">
+              <!-- Будет заполнено динамически -->
+            </div>
+          </div>
+
+          <!-- Контакты -->
+          <div class="tab-content" id="contacts-tab">
+            <h2>Мои контакты</h2>
+            <div class="contacts-container" id="contacts-display">
+              <div class="contact-item">
+                <i class="fab fa-telegram"></i>
+                <a href="https://t.me/username" target="_blank">@username</a>
+              </div>
+              <div class="contact-item">
+                <i class="fab fa-vk"></i>
+                <a href="https://vk.com/username" target="_blank">vk.com/username</a>
+              </div>
+              <div class="contact-item">
+                <i class="fab fa-tiktok"></i>
+                <a href="https://tiktok.com/@username" target="_blank">@username</a>
+              </div>
+            </div>
+            <div class="contacts-edit" id="contacts-edit" style="display: none;">
+              <div class="contact-edit-item">
+                <label for="telegram-input">
+                  <i class="fab fa-telegram"></i> Telegram:
+                </label>
+                <input type="text" id="telegram-input" placeholder="@username">
+              </div>
+              <div class="contact-edit-item">
+                <label for="vk-input">
+                  <i class="fab fa-vk"></i> VK:
+                </label>
+                <input type="text" id="vk-input" placeholder="vk.com/username">
+              </div>
+              <div class="contact-edit-item">
+                <label for="tiktok-input">
+                  <i class="fab fa-tiktok"></i> TikTok:
+                </label>
+                <input type="text" id="tiktok-input" placeholder="@username">
+              </div>
+              <div class="edit-buttons">
+                <button id="save-contacts-btn" class="btn primary-btn">Сохранить</button>
+                <button id="cancel-contacts-btn" class="btn secondary-btn">Отмена</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#" class="feedback-btn">Обратная связь</a>
+        </div>
+        <div class="copyright">
+          <p>Copyright © 2025 anicosmic.com Студия озвучки 'AniCosmic'</p>
+          <p>Руководитель: <a href="https://t.me/xMeT1oRx" target="_blank">@xMeT1oRx</a></p>
+        </div>
+        <div class="social-icons">
+          <a href="https://t.me/AniCosmic" target="_blank"><i class="fab fa-telegram"></i></a>
+          <a href="https://www.youtube.com/@AniCosmicShorts" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://boosty.to/xmet1orx" target="_blank"><i class="fas fa-heart"></i></a>
+          <a href="https://www.twitch.tv/xmet1orx" target="_blank"><i class="fab fa-twitch"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="edit-profile-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Редактирование профиля</h2>
+      <form id="profile-edit-form">
+        <div class="form-group">
+          <label for="edit-username">Имя пользователя</label>
+          <input type="text" id="edit-username" name="username">
+        </div>
+        <div class="form-group">
+          <label for="edit-email">Email</label>
+          <input type="email" id="edit-email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="edit-password">Новый пароль (оставьте пустым, если не хотите менять)</label>
+          <input type="password" id="edit-password" name="password">
+        </div>
+        <button type="submit" class="btn primary-btn">Сохранить изменения</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="profile.js"></script>
+</body>
+</html>

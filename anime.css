@@ -1,0 +1,385 @@
+
+/* Anime Details Page Styles */
+.anime-details-section {
+  margin-top: 40px;
+}
+
+.anime-header {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.anime-poster {
+  width: 300px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.anime-info-container {
+  flex: 1;
+}
+
+.anime-title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--secondary-color);
+}
+
+.anime-rating-large {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.anime-rating-large i {
+  color: gold;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+.anime-rating-large .rating-value {
+  font-size: 1.1rem;
+  margin-left: 10px;
+}
+
+.anime-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.anime-meta-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.anime-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.anime-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s;
+}
+
+.favorite-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.favorite-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.share-btn {
+  background-color: #3b5998;
+  color: white;
+}
+
+.share-btn:hover {
+  background-color: #2d4373;
+}
+
+.anime-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--gray-text);
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin: 30px 0 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--light-text);
+}
+
+.anime-staff {
+  margin-bottom: 30px;
+}
+
+.staff-group {
+  margin-bottom: 20px;
+}
+
+.staff-group-title {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+.staff-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.staff-item {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.staff-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.staff-item a {
+  color: var(--light-text);
+  text-decoration: none;
+}
+
+.anime-player {
+  margin: 30px 0;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.anime-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+.episode-tracking {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.mark-as-watched-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s;
+}
+
+.mark-as-watched-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.mark-as-watched-btn.watched {
+  background-color: #48c78e;
+  cursor: default;
+}
+
+.mark-as-watched-btn:disabled {
+  opacity: 0.7;
+}
+
+/* Related Anime */
+.related-anime-section {
+  margin: 50px 0;
+}
+
+.related-anime-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.related-anime-item {
+  background-color: var(--card-bg);
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.related-anime-item:hover {
+  background-color: var(--primary-color);
+}
+
+.related-anime-item a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--light-text);
+  text-decoration: none;
+}
+
+.related-anime-item img {
+  width: 50px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.related-anime-info {
+  flex: 1;
+}
+
+.related-anime-title {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.related-anime-type {
+  font-size: 0.8rem;
+  color: var(--gray-text);
+}
+
+/* Similar Anime */
+.similar-anime-section {
+  margin: 50px 0;
+}
+
+/* Comments Section */
+.comments-section {
+  margin: 50px 0;
+}
+
+.comment-form {
+  margin-bottom: 30px;
+}
+
+.comment-form textarea {
+  width: 100%;
+  padding: 15px;
+  height: 120px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  color: var(--light-text);
+  resize: vertical;
+  margin-bottom: 15px;
+}
+
+.comment-form textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+}
+
+.comment-form button {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.comment-form button:hover {
+  background-color: var(--secondary-color);
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.comment {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.comment-author {
+  font-weight: 600;
+  color: var(--light-text);
+}
+
+.comment-date {
+  font-size: 0.85rem;
+  color: var(--gray-text);
+}
+
+.comment-content {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--gray-text);
+}
+
+@media (max-width: 768px) {
+  .anime-header {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .anime-poster {
+    width: 250px;
+    height: 375px;
+  }
+  
+  .anime-info-container {
+    text-align: center;
+  }
+  
+  .anime-rating-large {
+    justify-content: center;
+  }
+  
+  .anime-meta {
+    justify-content: center;
+  }
+  
+  .anime-actions {
+    justify-content: center;
+  }
+  
+  .staff-list {
+    justify-content: center;
+  }
+  
+  .related-anime-list {
+    justify-content: center;
+  }
+  
+  .related-anime-item {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .anime-title {
+    font-size: 1.8rem;
+  }
+  
+  .anime-actions {
+    flex-direction: column;
+  }
+  
+  .anime-actions button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Наша команда - AniCosmic</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="team.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">AniCosmic</a>
+      </div>
+      <nav>
+        <ul class="main-menu">
+          <li><a href="index.html">Недавнее</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Релизы</a>
+            <div class="dropdown-content">
+              <a href="releases.html?type=serial">Сериалы</a>
+              <a href="releases.html?type=film">Фильмы</a>
+              <a href="releases.html?type=ova">OVA</a>
+              <a href="releases.html?type=ona">ONA</a>
+            </div>
+          </li>
+          <li><a href="team.html">Наша команда</a></li>
+          <li><a href="achievements.html">Достижения</a></li>
+        </ul>
+      </nav>
+      <div class="search-profile">
+        <div class="search-box">
+          <input type="text" placeholder="Поиск...">
+          <button type="button" class="mic-btn"><i class="fas fa-microphone"></i></button>
+          <button type="button" class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="profile">
+          <i class="fas fa-user-circle"></i>
+          <div class="profile-dropdown">
+            <!-- Будет заполнено через script.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="team-section">
+        <h1>Наша команда</h1>
+        
+        <div class="team-tabs">
+          <button class="tab-btn active" data-department="department1">1 отдел</button>
+          <button class="tab-btn" data-department="department2">2 отдел</button>
+          <button class="tab-btn" data-department="other">Вне отделов</button>
+        </div>
+        
+        <div class="team-grid" id="team-members">
+          <!-- Team members will be loaded dynamically -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#" class="feedback-btn">Обратная связь</a>
+        </div>
+        <div class="copyright">
+          <p>Copyright © 2025 anicosmic.com Студия озвучки 'AniCosmic'</p>
+          <p>Руководитель: <a href="https://t.me/xMeT1oRx" target="_blank">@xMeT1oRx</a></p>
+        </div>
+        <div class="social-icons">
+          <a href="https://t.me/AniCosmic" target="_blank"><i class="fab fa-telegram"></i></a>
+          <a href="https://www.youtube.com/@AniCosmicShorts" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://boosty.to/xmet1orx" target="_blank"><i class="fas fa-heart"></i></a>
+          <a href="https://www.twitch.tv/xmet1orx" target="_blank"><i class="fab fa-twitch"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="member-modal" class="modal">
+    <div class="modal-content member-modal-content">
+      <span class="close">&times;</span>
+      <div id="member-details">
+        <!-- Member details will be loaded dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <div id="feedback-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Обратная связь</h2>
+      <form id="feedback-form">
+        <div class="form-group">
+          <label for="name">Имя</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Сообщение</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="team.js"></script>
+</body>
+</html>
